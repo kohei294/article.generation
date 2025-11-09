@@ -160,15 +160,8 @@ ${outlineText}
 - **記事は読みやすく、理解しやすいように、短い文や箇条書きを効果的に使用してください。専門用語は避け、平易な言葉で説明してください。**
 - プロフェッショナルで、読者にとって価値のある文章を心がけてください。
 - Markdown形式で、見出しやリストを適切に使用してください。
-- **生成する記事の長さは、全体で3000〜5000字程度になるように調整してください。要点を絞り、冗長な説明は避けてください。ただし、内容は必ず完結させてください。**
+- **生成する記事の長さは、全体で3000〜5000字程度になるように調整してください。要点を絞り、冗長な説明は避けてください。ただし、内容は必ず完結させてください。**};
 
-    const response = await ai.models.generateContent({
-        model,
-        contents: generationPrompt,
-        config: { maxOutputTokens: 8192, thinkingConfig: { thinkingBudget: 4096 } },
-    });
-    return response.text || null;
-};
 
 const generateSocialMediaPosts = async (ai: GoogleGenAI, article: FullArticle): Promise<SocialMediaPosts | null> => {
     const prompt = `あなたは非常に優秀なSNSマーケティングの専門家です。以下の記事全体を分析し、読者のエンゲージメントを高め、記事へのクリックを促すような、魅力的で効果的なSNS投稿を作成してください。
